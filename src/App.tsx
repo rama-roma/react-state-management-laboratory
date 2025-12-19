@@ -24,6 +24,7 @@ import AsyncMobX from './pages/mobXPages/asyncMobX'
 import SyncMobX from './pages/mobXPages/syncMobX'
 import InfoAsyncMobX from './pages/mobXPages/infoAsyncMobX'
 import InfoSyncMobX from './pages/mobXPages/infoSyncMobX'
+import InfoSyncContextApi from './pages/contextApiPages/infoSyncContextApi'
 
 export default function App() {
   return (
@@ -60,6 +61,9 @@ export default function App() {
             <Route path='/syncMobX' element={<SyncMobX/>} />
             <Route path='/infoAsyncMobX/:id' element={<InfoAsyncMobX/>} />
             <Route path='/infoSyncMobX/:id' element={<InfoSyncMobX/>} />
+
+            <Route path='/infoSyncContextApi/:id' element={<InfoSyncContextApi/>} />
+
           </Route>
         </Routes>
       </BrowserRouter>

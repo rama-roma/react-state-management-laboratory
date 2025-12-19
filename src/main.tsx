@@ -4,11 +4,17 @@ import './index.css'
 import App from './App.tsx'
 import { Provider } from 'react-redux'
 import { store } from './state/redux/store.ts'
+import TodoProvider from './state/contextApi/todosApi.tsx'
+import ThemeProvider from './state/contextApi/darkMode.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <Provider store={store}>
-      <App />
+      <ThemeProvider>
+      <TodoProvider>
+        <App />
+      </TodoProvider>
+      </ThemeProvider>
     </Provider>
   </StrictMode>,
 )

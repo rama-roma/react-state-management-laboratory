@@ -88,7 +88,7 @@ const AsyncRedux = () => {
 
   return (
     <>
-      <main className="p-6 bg-gray-100 min-h-screen">
+      <main className="p-6  min-h-screen">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
           <div className="flex items-center gap-4">
             <Input
@@ -100,7 +100,7 @@ const AsyncRedux = () => {
             <select
               value={selected}
               onChange={(e) => setSelected(e.target.value)}
-              className="px-4 py-2 rounded-lg border bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="px-4 py-2 rounded-lg border  focus:outline-none focus:ring-2 focus:ring-blue-500"
             >
               <option value="all">All</option>
               <option value="active">Active</option>
