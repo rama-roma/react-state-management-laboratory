@@ -1,11 +1,11 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom' 
 import Layout from './layout'
-import Redux from './pages/all/redux'
-import Zustand from './pages/all/zustand'
-import Jotai from './pages/all/jotai'
-import MobX from './pages/all/mobX'
-import Context from './pages/all/context'
-import ReactQuery from './pages/all/reactQuery'
+import Redux from './pages/allPages/redux'
+import Zustand from './pages/allPages/zustand'
+import Jotai from './pages/allPages/jotai'
+import MobX from './pages/allPages/mobX'
+import Context from './pages/allPages/context'
+import ReactQuery from './pages/allPages/reactQuery'
 
 export default function App() {
   return (
