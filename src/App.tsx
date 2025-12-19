@@ -12,6 +12,18 @@ import InfoSyncRedux from './pages/reduxPages/infoSyncRedux'
 import InfoAsyncRedux from './pages/reduxPages/infoAsyncRedux'
 import AsyncRTK from './pages/reduxPages/rtkQuery/asyncRTK'
 import InfoAsyncRTK from './pages/reduxPages/rtkQuery/infoAsyncRTK'
+import AsyncZustand from './pages/zustandPages/asyncZustand'
+import SyncZustand from './pages/zustandPages/syncZustand'
+import InfoSyncZustand from './pages/zustandPages/infoSyncZustand'
+import InfoAsyncZustand from './pages/zustandPages/infoAsyncZustand'
+import AsyncJotai from './pages/jotaiPages/asyncJotai'
+import SyncJotai from './pages/jotaiPages/syncJotai'
+import InfoAsyncJotai from './pages/jotaiPages/infoAsyncJotai'
+import InfoSyncJotai from './pages/jotaiPages/infoSyncJotai'
+import AsyncMobX from './pages/mobXPages/asyncMobX'
+import SyncMobX from './pages/mobXPages/syncMobX'
+import InfoAsyncMobX from './pages/mobXPages/infoAsyncMobX'
+import InfoSyncMobX from './pages/mobXPages/infoSyncMobX'
 
 export default function App() {
   return (
@@ -33,6 +45,21 @@ export default function App() {
             <Route path='/infoAsyncRedux/:id' element={<InfoAsyncRedux/>} />
             <Route path='/asyncRTK' element={<AsyncRTK/>} />
             <Route path='/infoAsyncRTK/:id' element={<InfoAsyncRTK/>} />
+
+            <Route path='/asyncZustand' element={<AsyncZustand/>} />
+            <Route path='/syncZustand' element={<SyncZustand/>} />
+            <Route path='/infoSyncZustand/:id' element={<InfoSyncZustand/>} />
+            <Route path='/infoAsyncZustand/:id' element={<InfoAsyncZustand/>} />
+
+            <Route path='/asyncJotai' element={<AsyncJotai/>} />
+            <Route path='/syncJotai' element={<SyncJotai/>} />
+            <Route path='/infoAsyncJotai/:id' element={<InfoAsyncJotai/>} />
+            <Route path='/infoSyncJotai/:id' element={<InfoSyncJotai/>} />
+
+            <Route path='/asyncMobX' element={<AsyncMobX/>} />
+            <Route path='/syncMobX' element={<SyncMobX/>} />
+            <Route path='/infoAsyncMobX/:id' element={<InfoAsyncMobX/>} />
+            <Route path='/infoSyncMobX/:id' element={<InfoSyncMobX/>} />
           </Route>
         </Routes>
       </BrowserRouter>
