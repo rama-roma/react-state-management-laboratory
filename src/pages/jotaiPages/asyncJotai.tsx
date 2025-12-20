@@ -11,8 +11,13 @@ import { Modal, Input, Button } from "antd";
 import { Formik } from "formik";
 import { Link } from "react-router";
 
+interface Todo {
+  id: number;
+  name: string;
+}
+
 const AsyncJotai = () => {
-  const [data] = useAtom(dataAtom);
+  const [data] = useAtom<Todo[]>(dataAtom);
   const [, getUser] = useAtom(getAtom);
   const [, deleteUser] = useAtom(deleteAtom);
   const [, addUser] = useAtom(addAtom);
@@ -21,7 +26,6 @@ const AsyncJotai = () => {
   const [openAdd, setOpenAdd] = useState(false);
   const [openEdit, setOpenEdit] = useState(false);
   const [editId, setEditId] = useState<number | null>(null);
-
   const [search, setSearch] = useState("");
 
   useEffect(() => {
@@ -37,7 +41,7 @@ const AsyncJotai = () => {
           setEditId(null);
           setOpenEdit(false);
         } else {
-          await addUser(values);
+          await addUser({ name: values.name });
           setOpenAdd(false);
         }
         resetForm();
@@ -49,7 +53,7 @@ const AsyncJotai = () => {
             title="Add User"
             open={openAdd}
             onCancel={() => setOpenAdd(false)}
-            onOk={handleSubmit}
+            onOk={() => handleSubmit()}
             okText="Add"
           >
             <Input
@@ -64,7 +68,7 @@ const AsyncJotai = () => {
             title="Edit User"
             open={openEdit}
             onCancel={() => setOpenEdit(false)}
-            onOk={handleSubmit}
+            onOk={() => handleSubmit()}
             okText="Save"
           >
             <Input
@@ -75,8 +79,9 @@ const AsyncJotai = () => {
             />
           </Modal>
 
+
           <main className="mt-10">
-            <div className="flex gap-[10px]">
+            <div className="flex gap-2 mb-4">
               <Button
                 type="primary"
                 onClick={() => {
@@ -93,7 +98,7 @@ const AsyncJotai = () => {
               />
             </div>
 
-            <section className="mt-5 space-y-3">
+            <section className="space-y-3">
               {data
                 ?.filter((e) =>
                   e.name.toLowerCase().includes(search.toLowerCase())
@@ -101,7 +106,7 @@ const AsyncJotai = () => {
                 .map((e) => (
                   <div
                     key={e.id}
-                    className="flex items-center justify-between border p-3 rounded-md shadow-sm"
+                    className="flex items-center justify-between border p-3 rounded-md shadow-sm hover:shadow-md transition"
                   >
                     <h1>{e.name}</h1>
                     <div className="flex gap-2">
