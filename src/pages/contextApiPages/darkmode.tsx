@@ -1,8 +1,15 @@
 import React, { useContext } from "react";
-import { Button, Stack, Typography, Box } from "@mui/material";
+import { Button, Typography, Box } from "@mui/material";
+import { ThemeContext } from "@emotion/react";
+
+
+interface ThemeContextType {
+  theme: "light" | "dark";
+  toggleTheme: () => void;
+}
 
 const DarkMode: React.FC = () => {
-  const { theme, toggleTheme } = useContext(ThemeContext);
+  const { theme, toggleTheme } = useContext(ThemeContext) as ThemeContextType;
 
   return (
     <Box

@@ -15,8 +15,22 @@ import {
 } from "@mui/material";
 import { TodoContext } from "../../state/contextApi/todosApi";
 
+interface Todo {
+  id: number;
+  name: string;
+  status: boolean;
+}
+
+interface TodoContextType {
+  todos: Todo[];
+  addTodo: (name: string, status: boolean) => void;
+  editTodo: (id: number, name: string, status: boolean) => void;
+  toggleStatus: (id: number) => void;
+  deleteTodo: (id: number) => void;
+}
+
 const Context = () => {
-  const context = useContext(TodoContext);
+  const context = useContext(TodoContext) as TodoContextType;
   const { todos, addTodo, editTodo, toggleStatus, deleteTodo } = context;
 
   const [openAdd, setOpenAdd] = useState(false);
@@ -24,7 +38,7 @@ const Context = () => {
   const [newStatus, setNewStatus] = useState(false);
 
   const [openEdit, setOpenEdit] = useState(false);
-  const [editId, setEditId] = useState(null);
+  const [editId, setEditId] = useState<number | null>(null);
   const [editName, setEditName] = useState("");
   const [editStatus, setEditStatus] = useState(false);
 

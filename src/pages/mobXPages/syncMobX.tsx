@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { observer } from "mobx-react-lite";
-import { useNavigate, Link as RouterLink } from "react-router-dom";
+import {  Link as RouterLink } from "react-router-dom";
 import { todo } from "../../state/mobX/mobXTodo";
 import {
   Box,
@@ -20,7 +20,6 @@ import {
 } from "@mui/material";
 
 const SyncMobX = observer(() => {
-  const navigate = useNavigate();
 
   const [openAdd, setOpenAdd] = useState(false);
   const [newName, setNewName] = useState("");
@@ -43,7 +42,7 @@ const SyncMobX = observer(() => {
 
   const handleEdit = () => {
     if (editId !== null) {
-      todo.editUser(editId, { id: editId, name: editName, status: editStatus });
+      todo.editUser(editId, { name: editName, status: editStatus });
     }
     setOpenEdit(false);
     setEditId(null);
@@ -81,7 +80,6 @@ const SyncMobX = observer(() => {
           Add User
         </Button>
       </Box>
-
 
       <Box sx={{ display: "flex", flexWrap: "wrap", gap: 2 }}>
         {filteredData.map((u) => (
@@ -170,7 +168,12 @@ const SyncMobX = observer(() => {
             onChange={(e) => setNewName(e.target.value)}
           />
           <FormControlLabel
-            control={<Switch checked={newStatus} onChange={(e) => setNewStatus(e.target.checked)} />}
+            control={
+              <Switch
+                checked={newStatus}
+                onChange={(e) => setNewStatus(e.target.checked)}
+              />
+            }
             label="Active"
           />
         </DialogContent>
@@ -191,7 +194,12 @@ const SyncMobX = observer(() => {
             onChange={(e) => setEditName(e.target.value)}
           />
           <FormControlLabel
-            control={<Switch checked={editStatus} onChange={(e) => setEditStatus(e.target.checked)} />}
+            control={
+              <Switch
+                checked={editStatus}
+                onChange={(e) => setEditStatus(e.target.checked)}
+              />
+            }
             label="Active"
           />
         </DialogContent>

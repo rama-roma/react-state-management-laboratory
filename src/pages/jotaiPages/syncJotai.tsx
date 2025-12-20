@@ -9,8 +9,14 @@ import {
   editAtom,
 } from "../../state/jotai/atomTodo";
 
-const SyncJotai = () => {
-  const [data] = useAtom(dataAtom);
+interface Todo {
+  id: number;
+  name: string;
+  status: boolean;
+}
+
+const SyncJotai: React.FC = () => {
+  const [data] = useAtom<Todo[]>(dataAtom);
   const [, deleteUser] = useAtom(deleteAtom);
   const [, addUser] = useAtom(addAtom);
   const [, editUser] = useAtom(editAtom);
@@ -21,7 +27,7 @@ const SyncJotai = () => {
   const [newStatus, setNewStatus] = useState(false);
 
   const [openEdit, setOpenEdit] = useState(false);
-  const [editId, setEditId] = useState(null);
+  const [editId, setEditId] = useState<number | null>(null);
   const [editName, setEditName] = useState("");
   const [editStatus, setEditStatus] = useState(false);
 
@@ -29,11 +35,13 @@ const SyncJotai = () => {
   const [selected, setSelected] = useState("all");
 
   const handleEdit = () => {
-    editUser({ id: editId, name: editName, status: editStatus });
-    setOpenEdit(false);
-    setEditId(null);
-    setEditName("");
-    setEditStatus(false);
+    if (editId !== null) {
+      editUser({ id: editId, name: editName, status: editStatus });
+      setOpenEdit(false);
+      setEditId(null);
+      setEditName("");
+      setEditStatus(false);
+    }
   };
 
   const handleAdd = () => {
