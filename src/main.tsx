@@ -1,12 +1,13 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
-import App from './App.tsx'
+import App from './App'
 import { Provider } from 'react-redux'
-import { store } from './state/redux/store.ts'
-import TodoProvider from './state/contextApi/todosApi.tsx'
-import ThemeProvider from './state/contextApi/darkMode.tsx'
+import { store } from './state/redux/store'
+import TodoProvider from './state/contextApi/todosApi'
+import ThemeProvider from './state/contextApi/darkMode'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+
 
 export const queryClient = new QueryClient({
   defaultOptions: {

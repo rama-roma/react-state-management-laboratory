@@ -1,73 +1,84 @@
-# React + TypeScript + Vite
+🚀 React State Management Laboratory
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a laboratory for experimenting with various state management approaches in React.
+It demonstrates handling synchronous & asynchronous data, working with APIs, managing forms, and integrating with different UI libraries.
 
-Currently, two official plugins are available:
+🛠️ Technologies Used
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+React + TypeScript + Vite – core stack of the project
 
-## React Compiler
+TailwindCSS – utility-first CSS for styling
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Ant Design (AntD) & Material UI (MUI) – ready-made beautiful components
 
-## Expanding the ESLint configuration
+Redux Toolkit
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+🔹 Synchronous reducers (sync)
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+🔹 Asynchronous operations with createAsyncThunk (async)
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+🔹 RTK Query for API integration (async + swagger (todos))
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Zustand
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+🔹 Synchronous data (sync)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+🔹 Asynchronous data with Mock API (async + mockapi)
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Jotai
+
+🔹 Synchronous & asynchronous data (sync + async)
+
+🔹 Form handling with Formik
+
+🔹 Swagger API integration for categories (swagger(category))
+
+MobX
+
+🔹 Observable state management (sync + async)
+
+🔹 Mock API integration (mockapi)
+
+React Context
+
+🔹 Local state management (sync)
+
+🔹 Dark Mode implementation (darkmode)
+
+TanStack Query (React Query)
+
+🔹 Asynchronous API requests
+
+🔹 Integration with Swagger API for Todos (async + swagger(todos))
+
+📂 Project Structure
+src/
+├─ pages/
+│  ├─ reduxPages/        // Redux Toolkit examples
+│  ├─ zustandPages/      // Zustand examples
+│  ├─ jotaiPages/        // Jotai examples
+│  ├─ mobxPages/         // MobX examples
+│  ├─ contextPages/      // React Context examples
+│  ├─ tanStackPages/     // TanStack Query examples
+├─ state/                // State slices & stores
+├─ components/           // Reusable components
+├─ api/                  // API configurations
+├─ assets/               // Images & static assets
+├─ App.tsx               // Main app entry
+└─ main.tsx              // React entry point
+
+✨ Features
+
+✅ Todos CRUD – create, read, update, delete todos
+
+🖼️ Image upload – attach images to todos
+
+🔍 Filtering & search – filter todos by status & search by name
+
+🌙 Dark Mode – toggle dark/light theme via Context API
+
+📝 Form handling – forms with validation using Formik
+
+🔄 State comparison – see differences between Redux, Zustand, Jotai, MobX, Context & TanStack Query
+
+🌐 Async API integration – fetch & manipulate data with real or mock APIs

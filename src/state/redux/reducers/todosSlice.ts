@@ -4,10 +4,17 @@ import {
   type PayloadAction,
 } from "@reduxjs/toolkit";
 
+export interface Image {
+  id: number;
+  imageName: string;
+}
+
 export interface Todos {
   id: number;
   name: string;
-  status: boolean;
+  description: string;
+  isCompleted: boolean;
+  images: Image[];
 }
 
 interface TodosState {
