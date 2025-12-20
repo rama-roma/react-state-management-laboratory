@@ -25,6 +25,8 @@ import SyncMobX from './pages/mobXPages/syncMobX'
 import InfoAsyncMobX from './pages/mobXPages/infoAsyncMobX'
 import InfoSyncMobX from './pages/mobXPages/infoSyncMobX'
 import InfoSyncContextApi from './pages/contextApiPages/infoSyncContextApi'
+import TanStack from './pages/reactQueryPages/tanStack'
+import InfoTanStack from './pages/reactQueryPages/infoTanStack'
 
 export default function App() {
   return (
@@ -63,6 +65,8 @@ export default function App() {
             <Route path='/infoSyncMobX/:id' element={<InfoSyncMobX/>} />
 
             <Route path='/infoSyncContextApi/:id' element={<InfoSyncContextApi/>} />
+            <Route path='/tanStack' element={<TanStack/>} />
+            <Route path='/infoTanStack/:id' element={<InfoTanStack/>} />
 
           </Route>
         </Routes>

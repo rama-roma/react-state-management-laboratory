@@ -5,7 +5,6 @@ const MobX = () => {
     <>
       <main>
         <section className="flex gap-6 p-6">
-          
           <Link
             to="/asyncMobX"
             className="w-48 rounded-xl border border-gray-200 p-5 hover:shadow-md transition"
