@@ -16,6 +16,7 @@
     "@reduxjs/toolkit": "^2.11.2",
     "@tailwindcss/vite": "^4.1.18",
     "antd": "^6.1.1",
+    "formik": "^2.4.9",
     "jotai": "^2.16.0",
     "mobx": "^6.15.0",
     "mobx-react-lite": "^4.1.1",
@@ -25,6 +26,7 @@
     "react-router": "^7.11.0",
     "react-router-dom": "^7.11.0",
     "tailwindcss": "^4.1.18",
+    "yup": "^1.7.1",
     "zustand": "^5.0.9"
   },
   "devDependencies": {
